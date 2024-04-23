@@ -3,7 +3,7 @@ Some notes of managing unique environment related issues
 
 # Setting up kfp
 
-Installing kfp (kubeflow pipelines)[https://www.kubeflow.org/].
+Installing kfp [kubeflow pipelines](https://www.kubeflow.org/).
 
 The kfp package is installed via pip and we want to install it in a
 conda environment.
