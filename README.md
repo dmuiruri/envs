@@ -29,7 +29,8 @@ package in the given environment.
 
 Confirm that the package is installed in the right python's site packages
 
-```(kfp) ubuntu@tfserver-gpu:~$ pip show kfp
+```bash
+(kfp) ubuntu@tfserver-gpu:~$ pip show kfp
 Name: kfp
 Version: 2.7.0
 Summary: Kubeflow Pipelines SDK
@@ -43,7 +44,8 @@ Requires: click, docstring-parser, google-api-core, google-auth,
 google-cloud-storage, kfp-pipeline-spec, kfp-server-api, kubernetes,
 protobuf, PyYAML, requests-toolbelt, tabulate, urllib3
 
-Required-by:```
+Required-by:
+```
 
 # Setting up a remote Jupyter session and accessing it locally
 
