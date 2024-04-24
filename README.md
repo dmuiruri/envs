@@ -44,3 +44,31 @@ google-cloud-storage, kfp-pipeline-spec, kfp-server-api, kubernetes,
 protobuf, PyYAML, requests-toolbelt, tabulate, urllib3
 
 Required-by:```
+
+# Setting up a remote Jupyter session and accessing it locally
+
+We can use port forwarding to create a remote jupyter session and
+access the notebook from a local browser. This is enabled by port
+forwarding.
+
+The general command that should be run on the local machine
+`ssh -L local_port:localhost:remote_port username@remote_server`
+
+**local_port**: The port on your local machine where you want to access the Jupyter Notebook.
+**remote_port**: The port on the remote server where the Jupyter Notebook is running.
+**username**: Your username on the remote server.
+**remote_server**: The address or hostname of the remote server.
+
+Since our remote server is accessed through ssh keys, we need to
+modify the command with the following:
+
+ssh -N -f -L 8889:localhost:8889 username@remoteserver -i ~/.ssh/<keyfile>.key
+
+Then launch the jupyter notebook server in the remote server using a headless approach
+` jupyter notebook --no-browser --port=8889`
+
+Ensure traffic to that port is allowed on the remote machine by
+configuring the security group info (CSC cpouta) to allow(ingress) to
+that port from a given IP address(es).
+
+![configuring ssh traffic ingress through port 8889](./images/ingress_setting.png)
