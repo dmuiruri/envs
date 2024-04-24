@@ -54,6 +54,7 @@ access the notebook from a local browser. This is enabled by port
 forwarding.
 
 The general command that should be run on the local machine
+
 `ssh -L local_port:localhost:remote_port username@remote_server`
 
 **local_port**: The port on your local machine where you want to access the Jupyter Notebook.
@@ -64,9 +65,11 @@ The general command that should be run on the local machine
 Since our remote server is accessed through ssh keys, we need to
 modify the command with the following:
 
-ssh -N -f -L 8889:localhost:8889 username@remoteserver -i ~/.ssh/<keyfile>.key
+`ssh -N -f -L 8889:localhost:8889 username@remoteserver -i ~/.ssh/<keyfile>.key`
 
-Then launch the jupyter notebook server in the remote server using a headless approach
+Then launch the jupyter notebook server in the remote server using a
+headless approach
+
 ` jupyter notebook --no-browser --port=8889`
 
 Ensure traffic to that port is allowed on the remote machine by
