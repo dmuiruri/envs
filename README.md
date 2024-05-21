@@ -97,9 +97,9 @@ own pip, install and ensure it is used in the environment specific
 installations.
 
 ```bash
-pip install ipykernel
+pip install ipykernel (global pip installation)
 
-/home/<user>/miniconda3/envs/torchtransformer/bin/pip install ipykernel
+/home/<user>/miniconda3/envs/torchtransformer/bin/pip install ipykernel (environment pip)
 ```
 
 Then install the environment to the ipython kernel which can be
