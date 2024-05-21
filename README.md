@@ -91,5 +91,18 @@ Instead, Jupyter loads the native python kernel by default. To ensure
 other environments are accessible to jupyter, the environments need to
 be installed.
 
-`pip install ipykernel`
+Ensure ipykernel installed, and the correct pip is used. global pip vs
+conda environment specific pip. If the environment does not have its
+own pip, install and ensure it is used in the environment specific
+installations.
+
+```bash
+pip install ipykernel
+
+/home/<user>/miniconda3/envs/torchtransformer/bin/pip install ipykernel
+```
+
+Then install the environment to the ipython kernel which can be
+accessed by the jupyter session.
+
 `ipython kernel install --user --name=torchtransformer`
