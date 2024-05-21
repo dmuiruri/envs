@@ -77,3 +77,19 @@ configuring the security group info (CSC cpouta) to allow(ingress) to
 that port from a given IP address(es).
 
 ![configuring ssh traffic ingress through port 8889](./images/ingress_setting.png)
+
+# Virtual environments within Jupyter
+
+In some cases, we want to open jupyter within a given virtual
+environment which contains pre-installed dependencies. This can be
+done by "Select Kernel" drop down menu. However, the virtual
+enviroments are not listed as options by default.
+
+![Selecting different kernel in jupyter session](./images/jupyter_environments.png)
+
+Instead, Jupyter loads the native python kernel by default. To ensure
+other environments are accessible to jupyter, the environments need to
+be installed.
+
+`pip install ipykernel`
+`ipython kernel install --user --name=torchtransformer`
